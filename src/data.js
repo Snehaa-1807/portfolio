@@ -1,22 +1,23 @@
 // ============================================================
-// 📸 PHOTO: Replace null with your image import or path
-// Example:
-import photo from './assets/sneha.jpg'
-export const PHOTO_URL = photo
+// 📸 PHOTO: Place your photo in src/assets/ folder
+// then uncomment the import below and set PHOTO_URL = photo
 // ============================================================
+ import photo from './assets/sneha.jpg'
+export const PHOTO_URL = photo
+//export const PHOTO_URL = null // ← change to photo once you add your image
 
 // ============================================================
-// 🔗 SOCIAL LINKS — update these
+// 🔗 SOCIAL LINKS
 // ============================================================
 export const LINKS = {
   github:   'https://github.com/Snehaa-1807',
   linkedin: 'https://www.linkedin.com/in/sneha-narwaria-18a56b291',
-  email:    'mailTo: snehanarwaria2@gmail.com',
-  resume:   '#', // link to your resume PDF
+  email:    'mailto:snehanarwaria2@gmail.com',
+  resume:   '/Sneha_Narwaria_Resume.pdf',
 }
 
 // ============================================================
-// 🗂️ PROJECTS — replace `link` with your actual project URLs
+// 🗂️ PROJECTS
 // ============================================================
 export const PROJECTS = [
   {
@@ -24,13 +25,13 @@ export const PROJECTS = [
     name: 'Inventory SaaS',
     desc: 'Full-stack inventory management platform with real-time tracking and analytics dashboard.',
     tags: ['React', 'Node.js', 'MongoDB'],
-    link: 'https://inventory-saas-pfrd.vercel.app/', // ← YOUR LINK
+    link: 'https://inventory-saas-pfrd.vercel.app/',
   },
   {
     icon: '🤖',
     name: 'AI Portfolio Generator',
     desc: 'AI-powered portfolio generation tool that creates personalized portfolios from uploaded resumes.',
-    tags: ['Node.js', 'Groq Ai', 'React', 'TailwindCSS', 'MongoDB'],
+    tags: ['Node.js', 'Groq AI', 'React', 'TailwindCSS', 'MongoDB'],
     link: 'https://ai-portfolio-generator-7r9n.vercel.app/',
   },
   {
@@ -43,8 +44,8 @@ export const PROJECTS = [
   {
     icon: '🖼️',
     name: 'Imagino',
-    desc: 'Image-focused web application for creative exploration and visual content management.',
-    tags: ['React', 'APIs', 'TailwindCSS'],
+    desc: 'AI-powered image generation platform with Razorpay payment integration for premium features.',
+    tags: ['React', 'APIs', 'TailwindCSS', 'Razorpay'],
     link: 'https://imagino-ai.netlify.app/',
   },
   {
@@ -52,7 +53,7 @@ export const PROJECTS = [
     name: 'E-commerce Clothes Store',
     desc: 'Modern clothing store frontend with dynamic product filtering and cart functionality.',
     tags: ['HTML', 'CSS', 'JS'],
-    link: 'https://github.com/sneha-narwaria',
+    link: 'https://github.com/Snehaa-1807',
   },
   {
     icon: '🍎',
@@ -71,11 +72,11 @@ export const PROJECTS = [
 ]
 
 export const SKILLS = [
-  { icon: '⚛️', cat: 'Full Stack',  tags: ['React', 'Node.js', 'Express', 'MongoDB', 'MySQL'] },
+  { icon: '⚛️', cat: 'Full Stack',  tags: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'MySQL'] },
   { icon: '🔌', cat: 'IoT',         tags: ['ESP32', 'Raspberry Pi', 'Sensors', 'Embedded C/C++'] },
-  { icon: '🧠', cat: 'AI / ML',     tags: ['Python', 'Data Processing', 'Model Integration'] },
-  { icon: '🗣️', cat: 'Languages',   tags: ['Python', 'C++', 'Java', 'HTML', 'CSS', 'JavaScript'] },
-  { icon: '🛠️', cat: 'Tools',       tags: ['Git', 'Firebase', 'REST APIs', 'Cloud Deployment'] },
+  { icon: '🧠', cat: 'AI / ML',     tags: ['Python', 'Groq AI', 'Data Processing', 'Model Integration'] },
+  { icon: '🗣️', cat: 'Languages',   tags: ['JavaScript', 'Python', 'C++', 'Java', 'HTML', 'CSS'] },
+  { icon: '🛠️', cat: 'Tools',       tags: ['Git', 'GitHub', 'Firebase', 'Vercel', 'Netlify', 'Postman'] },
 ]
 
 export const SERVICES = [
@@ -87,8 +88,8 @@ export const SERVICES = [
 ]
 
 export const TIMELINE = [
-  { year: '2023',   title: 'Started Full Stack & IoT Development',      desc: 'Began the journey into web engineering and embedded systems, building foundational skills across the full stack.' },
-  { year: '2024',   title: 'Built Multiple Web + IoT Projects',          desc: 'Delivered production-grade web apps and IoT prototypes. Gained depth in React, Node.js, and hardware integration.' },
-  { year: '2025',   title: 'Focused on AI-Integrated & SaaS Systems',   desc: 'Shifting toward scalable SaaS products and AI-powered tooling. Building systems that think.' },
-  { year: 'Future', title: 'Research, Innovation & Product Engineering', desc: 'Pursuing deep research in IoT–AI convergence and building tools that create real-world difference.' },
+  { year: '2023',   title: 'Started Full Stack & IoT Development',       desc: 'Began the journey into web engineering and embedded systems, building foundational skills across the full stack.' },
+  { year: '2024',   title: 'Built Multiple Web + IoT Projects',           desc: 'Delivered production-grade web apps and IoT prototypes. Gained depth in React, Node.js, and hardware integration.' },
+  { year: '2025',   title: 'Focused on AI-Integrated & SaaS Systems',    desc: 'Interned at Ethara AI, reached Smart India Hackathon finals, and shipped SaaS platforms with AI capabilities.' },
+  { year: 'Future', title: 'Research, Innovation & Product Engineering',  desc: 'Pursuing deep research in IoT–AI convergence and building tools that create real-world difference.' },
 ]

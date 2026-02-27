@@ -10,7 +10,8 @@ export default function CTA() {
         <p className={styles.sub}>Let's build systems that don't just look good — they work at scale.</p>
         <div className={styles.btns}>
           <a href={LINKS.github}  target="_blank" rel="noopener noreferrer" className="btn-primary">View GitHub →</a>
-{/*          <a href={LINKS.resume}  target="_blank" rel="noopener noreferrer" className="btn-ghost">Download Resume</a>*/}          <a href="#contact" className="btn-ghost">Contact Me</a>
+          <a href="/Sneha_Narwaria_Resume.pdf" download="Sneha_Narwaria_Resume.pdf" className="btn-ghost">↓ Download Resume</a>
+          <a href="#contact" className="btn-ghost">Contact Me</a>
         </div>
         <p className={styles.note}>// systems that scale · code that ships · ideas that matter</p>
       </div>

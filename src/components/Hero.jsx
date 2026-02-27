@@ -8,6 +8,11 @@ const BADGES = [
   'Open to Opportunities',
 ]
 
+function navigate(path) {
+  window.history.pushState({}, '', path)
+  window.dispatchEvent(new PopStateEvent('popstate'))
+}
+
 export default function Hero() {
   return (
     <section id="home" className={styles.section}>
@@ -17,7 +22,7 @@ export default function Hero() {
         <div className={styles.left}>
           <div className={styles.tag}>
             <span className={styles.tagDot} />
-             Portfolio
+            AI-Native Portfolio
           </div>
 
           <h1 className={styles.name}>
@@ -38,9 +43,16 @@ export default function Hero() {
           </p>
 
           <div className={styles.btns}>
-            <a href="#work"       className="btn-primary">View Flagship Work →</a>
-            <a href="#contact"    className="btn-ghost">Contact</a>
-       { /*    <a href={LINKS.resume} className="btn-ghost" target="_blank" rel="noopener noreferrer">View Resume</a>*/}
+            <a href="#work" className="btn-primary">View Flagship Work →</a>
+            <a href="#contact" className="btn-ghost">Contact</a>
+            <a
+              href="/Sneha_Narwaria_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-ghost"
+            >
+              📄 View Resume
+            </a>
           </div>
         </div>
 
