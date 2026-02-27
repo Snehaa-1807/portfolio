@@ -1,0 +1,33 @@
+.timeline {
+  position: relative;
+  padding-left: 28px;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, var(--teal) 8%, var(--teal) 92%, transparent);
+}
+.item {
+  position: relative;
+  padding: 0 0 44px 34px;
+  opacity: 0;
+  transform: translateX(-18px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.item.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+.dot {
+  position: absolute;
+  left: -5px; top: 5px;
+  width: 11px; height: 11px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 10px var(--accent);
+}
+.year  { font-family: var(--fm); font-size: 0.76rem; color: var(--accent); letter-spacing: 0.1em; margin-bottom: 5px; }
+.title { font-family: var(--fd); font-size: 1.05rem; font-weight: 700; color: #fff; margin-bottom: 5px; }
+.desc  { font-size: 0.86rem; color: var(--muted); line-height: 1.65; }

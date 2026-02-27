@@ -1,0 +1,182 @@
+/* ── Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Variables ── */
+:root {
+  --accent:   #00c8ff;
+  --accent2:  #00ffd0;
+  --bg:       #02050f;
+  --bg2:      #061428;
+  --teal:     #0a4a5e;
+  --glass:    rgba(6, 20, 40, 0.65);
+  --text:     #e8f4ff;
+  --muted:    #7a9ab5;
+  --border:   rgba(0, 200, 255, 0.15);
+
+  --fd: 'Plus Jakarta Sans', sans-serif;
+  --fm: 'DM Mono', monospace;
+
+  /* layout */
+  --max-w:  1200px;
+  --pad-x:  64px;
+  --sec-py: 90px;
+}
+
+/* ── Base ── */
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--fd);
+  overflow-x: hidden;
+  cursor: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection { background: rgba(0, 200, 255, 0.28); color: #fff; }
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--teal); border-radius: 2px; }
+
+/* ── Noise grain overlay ── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9000;
+  opacity: 0.4;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E");
+}
+
+/* ── Layout container ── */
+.container {
+  width: 100%;
+  max-width: var(--max-w);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--pad-x);
+  padding-right: var(--pad-x);
+}
+
+.section {
+  padding-top: var(--sec-py);
+  padding-bottom: var(--sec-py);
+}
+
+/* ── Divider ── */
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+}
+
+/* ── Section labels ── */
+.sec-tag {
+  font-family: var(--fm);
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  color: var(--accent2);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.sec-title {
+  font-family: var(--fd);
+  font-size: clamp(1.9rem, 3.2vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.sec-sub {
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.75;
+  max-width: 540px;
+  margin-bottom: 44px;
+}
+
+/* ── Buttons ── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 26px;
+  background: linear-gradient(135deg, #00607c, #0080a0);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-family: var(--fd);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: none;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 0 28px rgba(0, 130, 160, 0.4);
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 36px rgba(0, 200, 255, 0.35);
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 13px 22px;
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-family: var(--fd);
+  font-size: 0.88rem;
+  font-weight: 500;
+  cursor: none;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.btn-ghost:hover {
+  color: var(--accent);
+  border-color: rgba(0, 200, 255, 0.45);
+  background: rgba(0, 200, 255, 0.05);
+}
+
+/* ── Scroll fade-in ── */
+.fade-in {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── BG orbs ── */
+.orb {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(110px);
+  opacity: 0.09;
+}
+.orb-1 { width: 700px; height: 700px; background: #0050a0; top: -200px; left: -250px; }
+.orb-2 { width: 500px; height: 500px; background: #005f60; bottom: 5%;  right: -180px; }
+.orb-3 { width: 350px; height: 350px; background: #003a80; top: 45%;   left: 35%; }
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  :root { --pad-x: 36px; }
+}
+@media (max-width: 768px) {
+  :root { --pad-x: 20px; --sec-py: 64px; }
+}

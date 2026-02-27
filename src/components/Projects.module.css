@@ -1,0 +1,95 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.card {
+  background: var(--glass);
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  padding: 26px;
+  backdrop-filter: blur(18px);
+  transition: all 0.24s;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  cursor: none;
+}
+.card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s;
+}
+.card:hover::after { transform: scaleX(1); }
+.card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(0,200,255,0.32);
+  box-shadow: 0 20px 65px rgba(0,0,0,0.45), 0 0 30px rgba(0,200,255,0.08);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 14px;
+}
+.icon {
+  width: 42px; height: 42px;
+  border-radius: 9px;
+  background: rgba(0,200,255,0.09);
+  border: 1px solid rgba(0,200,255,0.18);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.15rem;
+}
+.arrow {
+  color: var(--muted);
+  font-size: 1rem;
+  transition: color 0.2s, transform 0.2s;
+}
+.card:hover .arrow { color: var(--accent); transform: translate(3px,-3px); }
+
+.name {
+  font-family: var(--fd);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 7px;
+}
+.desc {
+  font-size: 0.84rem;
+  color: var(--muted);
+  line-height: 1.65;
+  margin-bottom: 16px;
+  flex: 1;
+}
+.tags { display: flex; flex-wrap: wrap; gap: 5px; }
+.tag  {
+  font-family: var(--fm);
+  font-size: 0.67rem;
+  color: var(--accent2);
+  background: rgba(0,255,208,0.06);
+  border: 1px solid rgba(0,255,208,0.14);
+  border-radius: 4px;
+  padding: 3px 8px;
+}
+.viewLink {
+  font-family: var(--fm);
+  font-size: 0.7rem;
+  color: var(--accent);
+  margin-top: 14px;
+  letter-spacing: 0.06em;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.card:hover .viewLink { opacity: 1; }
+
+@media (max-width: 1024px) { .grid { grid-template-columns: repeat(2,1fr); } }
+@media (max-width: 640px)  { .grid { grid-template-columns: 1fr; } }

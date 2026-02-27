@@ -1,0 +1,77 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 64px;
+  align-items: start;
+}
+.heading {
+  font-family: var(--fd);
+  font-size: 2.4rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 14px;
+}
+.sub { color: var(--muted); line-height: 1.75; font-size: 0.95rem; margin-bottom: 30px; }
+
+.links { display: flex; flex-direction: column; gap: 13px; }
+.link  {
+  display: flex; align-items: center; gap: 12px;
+  font-family: var(--fm); font-size: 0.8rem;
+  color: var(--muted); text-decoration: none;
+  transition: color 0.2s;
+}
+.link:hover { color: var(--accent); }
+.linkIcon {
+  width: 36px; height: 36px;
+  background: rgba(0,200,255,0.06);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.95rem;
+}
+
+/* Form */
+.form  { display: flex; flex-direction: column; gap: 15px; }
+.group { display: flex; flex-direction: column; gap: 6px; }
+.group label {
+  font-family: var(--fm);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+.group input,
+.group textarea {
+  background: rgba(6,20,40,0.7);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px 15px;
+  color: var(--text);
+  font-family: var(--fd);
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.group input:focus,
+.group textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(0,200,255,0.07);
+}
+.group textarea { resize: vertical; min-height: 120px; }
+.note { font-size: 0.78rem; color: var(--muted); }
+
+/* Success */
+.success {
+  background: rgba(0,255,208,0.06);
+  border: 1px solid rgba(0,255,208,0.18);
+  border-radius: 13px;
+  padding: 40px;
+  text-align: center;
+}
+.successIcon  { font-size: 2.2rem; margin-bottom: 14px; color: var(--accent2); }
+.successTitle { font-family: var(--fd); font-size: 1.2rem; font-weight: 700; color: var(--accent2); margin-bottom: 8px; }
+.successSub   { color: var(--muted); font-size: 0.88rem; }
+
+@media (max-width: 800px) {
+  .grid { grid-template-columns: 1fr; gap: 40px; }
+}
