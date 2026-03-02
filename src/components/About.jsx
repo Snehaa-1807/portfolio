@@ -1,10 +1,10 @@
 import styles from './About.module.css'
-import { PHOTO_URL } from '../data'
 
 const STATS = [
-  { num: '8+',  label: 'Projects Built' },
-  { num: '4+',  label: 'Tech Domains' },
-  { num: '∞',   label: 'Curiosity' },
+  { num: '8+', label: 'Projects Built' },
+  { num: '2+', label: 'Years Experience' },
+  { num: '4+', label: 'Tech Domains' },
+  { num: '∞',  label: 'Curiosity' },
 ]
 
 export default function About() {
@@ -12,14 +12,10 @@ export default function About() {
     <section id="about" className={`container section`}>
       <div className={styles.grid}>
 
-        {/* Visual */}
+        {/* Visual — initials block, no photo */}
         <div className={`${styles.visual} fade-in`}>
           <div className={styles.visualGlow} />
-          {/* 📸 PHOTO: set PHOTO_URL in src/data.js */}
-          {PHOTO_URL
-            ? <img src={PHOTO_URL} alt="Sneha Narwaria" className={styles.photo} />
-            : <span className={styles.initials}>SN</span>
-          }
+          <span className={styles.initials}>SN</span>
         </div>
 
         {/* Text */}

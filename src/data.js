@@ -1,12 +1,4 @@
 // ============================================================
-// 📸 PHOTO: Place your photo in src/assets/ folder
-// then uncomment the import below and set PHOTO_URL = photo
-// ============================================================
- import photo from './assets/sneha.jpg'
-export const PHOTO_URL = photo
-//export const PHOTO_URL = null // ← change to photo once you add your image
-
-// ============================================================
 // 🔗 SOCIAL LINKS
 // ============================================================
 export const LINKS = {

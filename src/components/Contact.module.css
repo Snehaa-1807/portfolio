@@ -75,3 +75,27 @@
 @media (max-width: 800px) {
   .grid { grid-template-columns: 1fr; gap: 40px; }
 }
+
+/* Sending spinner */
+.spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  vertical-align: middle;
+  margin-right: 6px;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Error message */
+.errMsg {
+  font-size: 0.82rem;
+  color: #ff7070;
+  background: rgba(255,80,80,0.08);
+  border: 1px solid rgba(255,80,80,0.2);
+  border-radius: 7px;
+  padding: 10px 13px;
+}

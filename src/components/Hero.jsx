@@ -1,5 +1,5 @@
 import styles from './Hero.module.css'
-import { PHOTO_URL, LINKS } from '../data'
+import { LINKS } from '../data'
 
 const BADGES = [
   'B.Tech IoT Engineering',
@@ -7,11 +7,6 @@ const BADGES = [
   'AI Systems Builder',
   'Open to Opportunities',
 ]
-
-function navigate(path) {
-  window.history.pushState({}, '', path)
-  window.dispatchEvent(new PopStateEvent('popstate'))
-}
 
 export default function Hero() {
   return (
@@ -60,11 +55,8 @@ export default function Hero() {
         <div className={styles.card}>
           <div className={styles.cardGlow} />
 
-          {/* 📸 PHOTO: set PHOTO_URL in src/data.js */}
-          {PHOTO_URL
-            ? <img src={PHOTO_URL} alt="Sneha Narwaria" className={styles.photo} />
-            : <div className={styles.avatar}>SN</div>
-          }
+          {/* Avatar with initials */}
+          <div className={styles.avatar}>SN</div>
 
           <p className={styles.cardName}>Sneha Narwaria</p>
           <p className={styles.cardTitle}>Full Stack · IoT Engineer</p>

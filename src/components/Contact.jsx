@@ -1,23 +1,42 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
+import emailjs from '@emailjs/browser'
 import styles from './Contact.module.css'
 import { LINKS } from '../data'
 
+const EMAILJS_SERVICE_ID  = 'service_rb9enpj'   // Email Services tab
+const EMAILJS_TEMPLATE_ID = 'template_oi1gf0h'  // Email Templates tab
+const EMAILJS_PUBLIC_KEY  = 'qWQiXAgrXCdpTJeZ0'
 const CONTACT_LINKS = [
-  { icon: '⚡', label: 'github.com/sneha-narwaria',     href: LINKS.github },
-  { icon: '💼', label: 'linkedin.com/in/sneha-narwaria', href: LINKS.linkedin },
-  { icon: '✉️', label: 'snehanarwaria2@gmail.com',              href: LINKS.email },
+  { icon: '⚡', label: 'github.com/Snehaa-1807',                  href: LINKS.github },
+  { icon: '💼', label: 'linkedin.com/in/sneha-narwaria-18a56b291', href: LINKS.linkedin },
+  { icon: '✉️', label: 'snehanarwaria2@gmail.com',                 href: LINKS.email },
 ]
 
 export default function Contact() {
-  const [form, setForm] = useState({ name: '', email: '', message: '' })
-  const [sent, setSent] = useState(false)
+  const formRef = useRef(null)
+  const [form, setForm]       = useState({ from_name: '', from_email: '', message: '' })
+  const [status, setStatus]   = useState('idle') // idle | sending | success | error
 
   const handleChange = (e) =>
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    setSent(true)
+    setStatus('sending')
+
+    try {
+      await emailjs.sendForm(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        formRef.current,
+        EMAILJS_PUBLIC_KEY
+      )
+      setStatus('success')
+      setForm({ from_name: '', from_email: '', message: '' })
+    } catch (err) {
+      console.error('EmailJS error:', err)
+      setStatus('error')
+    }
   }
 
   return (
@@ -49,31 +68,42 @@ export default function Contact() {
 
         {/* Right: Form */}
         <div className="fade-in" style={{ transitionDelay: '0.18s' }}>
-          {sent ? (
+
+          {status === 'success' ? (
             <div className={styles.success}>
               <div className={styles.successIcon}>✓</div>
               <p className={styles.successTitle}>Message Sent!</p>
-              <p className={styles.successSub}>I usually reply within 24 hours.</p>
+              <p className={styles.successSub}>Thanks! I'll reply to your email within 24 hours.</p>
             </div>
           ) : (
-            <form className={styles.form} onSubmit={handleSubmit}>
-              {[
-                { label: 'Name',  name: 'name',  type: 'text',  ph: 'Your name' },
-                { label: 'Email', name: 'email', type: 'email', ph: 'your@email.com' },
-              ].map((f) => (
-                <div className={styles.group} key={f.name}>
-                  <label htmlFor={f.name}>{f.label}</label>
-                  <input
-                    id={f.name}
-                    name={f.name}
-                    type={f.type}
-                    placeholder={f.ph}
-                    value={form[f.name]}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-              ))}
+            <form ref={formRef} className={styles.form} onSubmit={handleSubmit}>
+
+              <div className={styles.group}>
+                <label htmlFor="from_name">Name</label>
+                <input
+                  id="from_name"
+                  name="from_name"
+                  type="text"
+                  placeholder="Your name"
+                  value={form.from_name}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+
+              <div className={styles.group}>
+                <label htmlFor="from_email">Email</label>
+                <input
+                  id="from_email"
+                  name="from_email"
+                  type="email"
+                  placeholder="your@email.com"
+                  value={form.from_email}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+
               <div className={styles.group}>
                 <label htmlFor="message">Message</label>
                 <textarea
@@ -85,14 +115,30 @@ export default function Contact() {
                   required
                 />
               </div>
-              <button type="submit" className="btn-primary" style={{ cursor: 'none', alignSelf: 'flex-start' }}>
-                Send Message →
+
+              {status === 'error' && (
+                <p className={styles.errMsg}>
+                  ⚠ Something went wrong. Please try emailing me directly at snehanarwaria2@gmail.com
+                </p>
+              )}
+
+              <button
+                type="submit"
+                className="btn-primary"
+                disabled={status === 'sending'}
+                style={{ cursor: 'none', alignSelf: 'flex-start' }}
+              >
+                {status === 'sending'
+                  ? <><span className={styles.spinner} /> Sending...</>
+                  : 'Send Message →'
+                }
               </button>
+
               <p className={styles.note}>I usually reply within 24 hours.</p>
             </form>
           )}
-        </div>
 
+        </div>
       </div>
     </section>
   )
