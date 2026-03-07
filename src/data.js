@@ -31,7 +31,7 @@ export const PROJECTS = [
   name: 'TruthGuard',
   desc: 'AI-powered fake news detection platform with NLP pipeline, blended ML + rule-based scoring, and real-time credibility analysis. Features URL fetching, history tracking, bookmarks, and a dark intelligence dashboard.',
   tags: ['React', 'Node.js', 'MongoDB', 'Python', 'Flask', 'scikit-learn'],
-  link: 'https://truth-guard-iota.vercel.app/',
+  link: 'https://truth-guard-tfmx.vercel.app/',
 },
   {
   icon: '🧠',
