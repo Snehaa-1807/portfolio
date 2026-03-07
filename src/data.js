@@ -27,6 +27,20 @@ export const PROJECTS = [
     link: 'https://ai-portfolio-generator-7r9n.vercel.app/',
   },
   {
+  icon: '🛡️',
+  name: 'TruthGuard',
+  desc: 'AI-powered fake news detection platform with NLP pipeline, blended ML + rule-based scoring, and real-time credibility analysis. Features URL fetching, history tracking, bookmarks, and a dark intelligence dashboard.',
+  tags: ['React', 'Node.js', 'MongoDB', 'Python', 'Flask', 'scikit-learn'],
+  link: 'https://truth-guard-iota.vercel.app/',
+},
+  {
+  icon: '🧠',
+  name: 'Neural AI Chatbot',
+  desc: 'Full-stack AI chat application with real-time streaming, voice assistant with wake word detection, code execution, web search, and WhatsApp chat sharing.',
+  tags: ['React', 'Node.js', 'MongoDB', 'Groq AI'],
+  link: 'https://ai-chatbot-pi-steel.vercel.app/',
+},
+  {
     icon: '💬',
     name: 'Real-Time Chat App',
     desc: 'Firebase-based real-time messaging system with authentication and live presence updates.',
