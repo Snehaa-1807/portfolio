@@ -55,9 +55,6 @@ export default function Hero() {
         <div className={styles.card}>
           <div className={styles.cardGlow} />
 
-          {/* Avatar with initials */}
-          <div className={styles.avatar}>SN</div>
-
           <p className={styles.cardName}>Sneha Narwaria</p>
           <p className={styles.cardTitle}>Full Stack · IoT Engineer</p>
 

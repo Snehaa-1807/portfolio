@@ -1,8 +1,7 @@
 .grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 72px;
-  align-items: center;
+  grid-template-columns: 1fr;
+  gap: 32px;
 }
 .visual {
   border-radius: 18px;

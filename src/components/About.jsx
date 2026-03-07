@@ -2,7 +2,6 @@ import styles from './About.module.css'
 
 const STATS = [
   { num: '8+', label: 'Projects Built' },
-  { num: '2+', label: 'Years Experience' },
   { num: '4+', label: 'Tech Domains' },
   { num: '∞',  label: 'Curiosity' },
 ]
@@ -11,12 +10,6 @@ export default function About() {
   return (
     <section id="about" className={`container section`}>
       <div className={styles.grid}>
-
-        {/* Visual — initials block, no photo */}
-        <div className={`${styles.visual} fade-in`}>
-          <div className={styles.visualGlow} />
-          <span className={styles.initials}>SN</span>
-        </div>
 
         {/* Text */}
         <div>
