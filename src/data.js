@@ -5,7 +5,7 @@ export const LINKS = {
   github:   'https://github.com/Snehaa-1807',
   linkedin: 'https://www.linkedin.com/in/sneha-narwaria-18a56b291',
   email:    'mailto:snehanarwaria2@gmail.com',
-  resume:   '/Sneha_Narwaria_Resume.pdf',
+  resume:   '/Sneha Narwaria Resume.pdf',
 }
 
 // ============================================================
