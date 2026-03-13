@@ -27,6 +27,13 @@ export const PROJECTS = [
     link: 'https://ai-portfolio-generator-7r9n.vercel.app/',
   },
   {
+  icon: '🎟️',
+  name: 'EventSphere',
+  desc: 'Full-stack event booking platform with real-time seat tracking, Razorpay payment gateway, Google OAuth, and downloadable QR tickets.',
+  tags: ['React', 'Node.js', 'MySQL', 'Razorpay', 'Socket.io'],
+  link: 'https://smart-event-booking-ewv9.vercel.app/',
+},
+  {
   icon: '🛡️',
   name: 'TruthGuard',
   desc: 'AI-powered fake news detection platform with NLP pipeline, blended ML + rule-based scoring, and real-time credibility analysis. Features URL fetching, history tracking, bookmarks, and a dark intelligence dashboard.',
