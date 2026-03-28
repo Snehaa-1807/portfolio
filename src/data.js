@@ -47,13 +47,13 @@ export const PROJECTS = [
   tags: ['React', 'Node.js', 'MongoDB', 'Groq AI'],
   link: 'https://ai-chatbot-pi-steel.vercel.app/',
 },
-  {
-    icon: '💬',
-    name: 'Real-Time Chat App',
-    desc: 'Firebase-based real-time messaging system with authentication and live presence updates.',
-    tags: ['Firebase', 'React', 'Node.js'],
-    link: 'https://chatly-the-chatapp.netlify.app/',
-  },
+{
+  icon: '💬',
+  name: 'Whop-RealTime Chat App',
+  desc: 'Full-stack real-time messaging platform with AI assistant, WhatsApp-like features including typing indicators, message reactions, read receipts, emoji picker, and group chats.',
+  tags: ['React', 'Node.js', 'Socket.IO', 'MongoDB', 'TailwindCSS', 'NVIDIA AI'],
+  link: 'https://realtime-chat-app-eight-rho.vercel.app/',
+},
   {
     icon: '🖼️',
     name: 'Imagino',
