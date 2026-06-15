@@ -13,6 +13,13 @@ export const LINKS = {
 // ============================================================
 export const PROJECTS = [
   {
+  icon: '📋',
+  name: 'ResumeAI',
+  desc: 'AI-powered resume generator with chat-based builder, ATS scoring, 5 professional templates, cover letter generation, and PDF export. Built with MERN stack and Groq LLaMA.',
+  tags: ['React', 'Node.js', 'MongoDB', 'Groq AI', 'Tailwind CSS'],
+  link: 'https://resume-generator-orcin-pi.vercel.app/',
+},
+  {
     icon: '📦',
     name: 'Inventory SaaS',
     desc: 'Full-stack inventory management platform with real-time tracking and analytics dashboard.',
@@ -26,6 +33,13 @@ export const PROJECTS = [
     tags: ['Node.js', 'Groq AI', 'React', 'TailwindCSS', 'MongoDB'],
     link: 'https://ai-portfolio-generator-7r9n.vercel.app/',
   },
+  {
+  icon: '🚖',
+  name: 'RideXO',
+  desc: 'A full-stack ride-hailing platform built with Next.js, featuring real-time ride tracking, live driver-passenger communication, Google authentication, and Socket.IO-powered updates.',
+  tags: ['Next.js', 'Node.js', 'MongoDB'],
+  link: 'https://ridexo.vercel.app/',
+},
   {
   icon: '🎟️',
   name: 'EventSphere',
