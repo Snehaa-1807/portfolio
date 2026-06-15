@@ -1,7 +1,7 @@
 import styles from './About.module.css'
 
 const STATS = [
-  { num: '8+', label: 'Projects Built' },
+  { num: '10+', label: 'Projects Built' },
   { num: '4+', label: 'Tech Domains' },
   { num: '∞',  label: 'Curiosity' },
 ]
