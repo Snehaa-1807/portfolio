@@ -41,7 +41,7 @@ export default function Hero() {
             <a href="#work" className="btn-primary">View Flagship Work →</a>
             <a href="#contact" className="btn-ghost">Contact</a>
             <a
-              href="/Sneha Narwaria Resume.pdf"
+              href="/SNEHA_NARWARIA_RESUME.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-ghost"
